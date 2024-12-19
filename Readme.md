@@ -16,7 +16,7 @@ This agent includes a powerful database and AI-driven tools that allow users to 
 To get started with **Bact.AI**, follow these steps:
 
 1. Prepare your microbial community taxonomic profile (usually in BIOM or TSV format) 📝.
-2. Download and configure the **Bact.AI** database (`Bact.AI.txt`) 📥.
+2. Download and configure the **Bact.AI** database (`Bact_AI.txt`) 📥.
 3. Use the **Bact_AI.py** script to transform taxonomic data into functional data, enhanced by the AI model ⚙️.
 
 ### Example Usage
