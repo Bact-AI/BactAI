@@ -24,7 +24,7 @@ To get started with **Bact.AI**, follow these steps:
 To convert an OTU table in **BIOM** format into a functional table:
 
 ```bash
-./collapse_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt
+./Bact_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt
 ```
 
 This assumes that the OTU table contains full taxon names (e.g., from SILVA or Greengenes format) 🔠.
@@ -32,19 +32,19 @@ This assumes that the OTU table contains full taxon names (e.g., from SILVA or G
 If your OTU table uses OTU numbers and taxonomic annotations are stored as metadata, use the following command:
 
 ```bash
-./collapse_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt --collapse_by_metadata 'taxonomy'
+./Bact_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt --collapse_by_metadata 'taxonomy'
 ```
 
 **AIgent** will automatically analyze the output data and suggest possible unannotated functional groups based on patterns found within the taxonomic data 🔍. You can view these predictions by running:
 
 ```bash
-./collapse_table.py -i otu_table.biom -o functional_table_with_predictions.biom -g Bact.AI.txt --use_ai_predictions
+./Bact_table.py -i otu_table.biom -o functional_table_with_predictions.biom -g Bact.AI.txt --use_ai_predictions
 ```
 
 To convert a classical table (e.g., TSV format), consult the help menu by running:
 
 ```bash
-./collapse_table.py -h
+./Bact_table.py -h
 ```
 
 For more detailed instructions and resources, visit the official **Bact.AI** website: [Bact.ai]() 🌐
