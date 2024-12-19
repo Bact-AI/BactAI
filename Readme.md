@@ -2,14 +2,14 @@
 
 **Bact.AI** is an advanced AI-powered platform 🤖 designed to map prokaryotic clades (e.g., genera, species, or subspecies) to a variety of metabolic or other ecologically relevant functions. Leveraging cutting-edge artificial intelligence and machine learning algorithms, **Bact.AI** not only provides functional annotations based on current literature 📚 but also delivers intelligent predictions and insights 💡 based on user-specific microbial community data.
 
-This agent includes a powerful database and AI-driven tools that allow users to convert microbial taxonomic profiles (e.g., OTU tables) into functional profiles, using the taxa identified in the sample. The AI engine, **AIgent**, enhances the accuracy of functional predictions and provides deeper insights into microbial ecosystems 🌍.
+This agent includes a powerful database and AI-driven tools that allow users to convert microbial taxonomic profiles (e.g., OTU tables) into functional profiles, using the taxa identified in the sample. The AI engine, **AI-Agent**, enhances the accuracy of functional predictions and provides deeper insights into microbial ecosystems 🌍.
 
 ## Features 🌟
 
 - **Bact.AI Database** (`Bact_AI.txt`): A comprehensive file containing functional annotations for prokaryotic clades, derived from current peer-reviewed literature 📖.
-- **AIgent**: An AI-powered analysis engine integrated within **Bact.AI**, capable of predicting missing functional annotations and offering recommendations for new, potential functions based on patterns in the data 🔮.
+- **AI-Agent**: An AI-powered analysis engine integrated within **Bact.AI**, capable of predicting missing functional annotations and offering recommendations for new, potential functions based on patterns in the data 🔮.
 - **Python Script** (`Bact_AI.py`): This script allows you to transform taxonomic tables (e.g., BIOM format) into functional tables, linking OTUs with their corresponding functions in **Bact.AI** 🔄.
-- **Intelligent Predictions**: **AIgent** leverages machine learning models 🤖 to suggest potential functions for uncharacterized taxa, even when the associated literature is sparse or incomplete 🔍.
+- **Intelligent Predictions**: **AI-Agent** leverages machine learning models 🤖 to suggest potential functions for uncharacterized taxa, even when the associated literature is sparse or incomplete 🔍.
 
 ## Getting Started 🚀
 
@@ -35,7 +35,7 @@ If your OTU table uses OTU numbers and taxonomic annotations are stored as metad
 ./Bact_AI.py -i otu_table.biom -o functional_table.biom -g Bact_AI.txt --Bact_by_metadata 'taxonomy'
 ```
 
-**AIgent** will automatically analyze the output data and suggest possible unannotated functional groups based on patterns found within the taxonomic data 🔍. You can view these predictions by running:
+**AI-Agent** will automatically analyze the output data and suggest possible unannotated functional groups based on patterns found within the taxonomic data 🔍. You can view these predictions by running:
 
 ```bash
 ./Bact_AI.py -i otu_table.biom -o functional_table_with_predictions.biom -g Bact_AI.txt --use_ai_predictions
@@ -52,15 +52,15 @@ For more detailed instructions and resources, visit the official **Bact.AI** web
 ## Key Features of **Bact.AI** 🔑
 
 - **Taxa-to-function Mapping**: Functional groups are assigned based on taxa identified in the sample, enabling a comprehensive understanding of microbial functions in diverse environments 🌿.
-- **AI-Driven Predictions**: The integrated **AIgent** engine provides real-time functional predictions for unannotated or novel taxa, improving the robustness of functional analysis 🤖.
+- **AI-Driven Predictions**: The integrated **AI-Agent** engine provides real-time functional predictions for unannotated or novel taxa, improving the robustness of functional analysis 🤖.
 - **Peer-Reviewed Database**: The functional annotations in **Bact.AI** are based on published research of cultured organisms and relevant ecological studies 📚.
-- **Customizable and Scalable**: As more data is gathered, **Bact.AI** can be updated with new functional annotations. **AIgent** can learn from new datasets, continuously improving its prediction accuracy 📈.
+- **Customizable and Scalable**: As more data is gathered, **Bact.AI** can be updated with new functional annotations. **AI-Agent** can learn from new datasets, continuously improving its prediction accuracy 📈.
 
 ## Caveats ⚠️
 
 **Bact.AI** defines functional groups by linking them to specific taxa. These affiliations are primarily based on cultured organisms and peer-reviewed publications. **Bact.AI** assumes that if all cultured members of a clade can perform a particular function, then all members of that clade (including non-cultured species) can perform that function. As more organisms are cultured and new data becomes available, some of these assumptions may need to be revised 🔄.
 
-Additionally, **AIgent**'s predictions are based on patterns identified through machine learning models. While these predictions improve over time, they should be verified with experimental data when possible ⚗️.
+Additionally, **AI-Agent**'s predictions are based on patterns identified through machine learning models. While these predictions improve over time, they should be verified with experimental data when possible ⚗️.
 
 ## License Agreement 📜
 
