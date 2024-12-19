@@ -66,7 +66,7 @@ Additionally, **AI-Agent**'s predictions are based on patterns identified throug
 
 ------
 
-Copyright (c) 2023, Bact.AI. All rights reserved.
+Copyright (c) 2024, Bact.AI. All rights reserved.
 
 Use and redistribution of the **Bact.AI** database, including any associated software, with or without modification, are permitted provided that the following conditions are met:
 
