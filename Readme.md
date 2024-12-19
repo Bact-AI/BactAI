@@ -8,7 +8,7 @@ This agent includes a powerful database and AI-driven tools that allow users to 
 
 - **Bact.AI Database** (`Bact.AI.txt`): A comprehensive file containing functional annotations for prokaryotic clades, derived from current peer-reviewed literature 📖.
 - **AIgent**: An AI-powered analysis engine integrated within **Bact.AI**, capable of predicting missing functional annotations and offering recommendations for new, potential functions based on patterns in the data 🔮.
-- **Python Script** (`collapse_table.py`): This script allows you to transform taxonomic tables (e.g., BIOM format) into functional tables, linking OTUs with their corresponding functions in **Bact.AI** 🔄.
+- **Python Script** (`Bact_table.py`): This script allows you to transform taxonomic tables (e.g., BIOM format) into functional tables, linking OTUs with their corresponding functions in **Bact.AI** 🔄.
 - **Intelligent Predictions**: **AIgent** leverages machine learning models 🤖 to suggest potential functions for uncharacterized taxa, even when the associated literature is sparse or incomplete 🔍.
 
 ## Getting Started 🚀
@@ -17,7 +17,7 @@ To get started with **Bact.AI**, follow these steps:
 
 1. Prepare your microbial community taxonomic profile (usually in BIOM or TSV format) 📝.
 2. Download and configure the **Bact.AI** database (`Bact.AI.txt`) 📥.
-3. Use the **collapse_table.py** script to transform taxonomic data into functional data, enhanced by the AI model ⚙️.
+3. Use the **Bact_table.py** script to transform taxonomic data into functional data, enhanced by the AI model ⚙️.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ This assumes that the OTU table contains full taxon names (e.g., from SILVA or G
 If your OTU table uses OTU numbers and taxonomic annotations are stored as metadata, use the following command:
 
 ```bash
-./Bact_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt --collapse_by_metadata 'taxonomy'
+./Bact_table.py -i otu_table.biom -o functional_table.biom -g Bact.AI.txt --Bact_by_metadata 'taxonomy'
 ```
 
 **AIgent** will automatically analyze the output data and suggest possible unannotated functional groups based on patterns found within the taxonomic data 🔍. You can view these predictions by running:
