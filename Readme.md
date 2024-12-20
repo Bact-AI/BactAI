@@ -1,6 +1,6 @@
 # Bact.AI - Functional Prection AI-Agent 🌱🧬
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Bact-AI/BactAI/img/banner.png" alt="Project Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/Bact-AI/BactAI/img/banner.jpg" alt="Project Banner" width="100%">
 </div>
 **Bact.AI** is an advanced AI-powered platform 🤖 designed to map prokaryotic clades (e.g., genera, species, or subspecies) to a variety of metabolic or other ecologically relevant functions. Leveraging cutting-edge artificial intelligence and machine learning algorithms, **Bact.AI** not only provides functional annotations based on current literature 📚 but also delivers intelligent predictions and insights 💡 based on user-specific microbial community data.
 
