@@ -60,7 +60,7 @@ For more detailed instructions and resources, visit the official **Bact.AI** web
 - **Customizable and Scalable**: As more data is gathered, **Bact.AI** can be updated with new functional annotations. **AI-Agent** can learn from new datasets, continuously improving its prediction accuracy 📈.
 
 
-# Protein Structure Prediction Combine Bact.AI with AlphaFold 🧬
+#Function.py:Protein Structure Prediction Combine Bact.AI with AlphaFold 🧬
 
 ## Overview 🌟
 
@@ -211,9 +211,7 @@ The `update_table_with_structure(data, structure_data)` function merges the pred
 - The script uses threading to parallelize the structure prediction process. If the dataset is very large, you may need to adjust the `max_workers` parameter to control the number of concurrent threads.
 - Running the script on a machine with a GPU will significantly speed up the AlphaFold predictions.
 
-## License 📜
 
-This script is licensed under the MIT License.
 
 
 ## Caveats ⚠️
