@@ -212,7 +212,7 @@ The `update_table_with_structure(data, structure_data)` function merges the pred
 - Running the script on a machine with a GPU will significantly speed up the AlphaFold predictions.
 
 
-# Function2.py:Protein Functional Annotation Combine Bact.AI InterProScan 🔬
+# Function1.py:Protein Functional Annotation Combine Bact.AI InterProScan 🔬
 
 ## Overview 🧬
 
