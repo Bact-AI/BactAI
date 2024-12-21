@@ -212,6 +212,154 @@ The `update_table_with_structure(data, structure_data)` function merges the pred
 - Running the script on a machine with a GPU will significantly speed up the AlphaFold predictions.
 
 
+# Function2.py:Protein Functional Annotation Combine Bact.AI InterProScan 🔬
+
+## Overview 🧬
+
+This Python script allows you to annotate protein sequences with functional domains and families using **InterProScan**. After annotating the sequences, the script visualizes the distribution of protein families in your dataset using a **pie chart**. This is useful for understanding the functional composition of a protein dataset and for exploring domain and family annotations.
+
+## Features 🚀
+
+- **Input Format**: Accepts protein sequence data in CSV or TSV format. 📊
+- **InterProScan Integration**: Annotates protein sequences with domains and functional families. 🔍
+- **Parallel Processing**: Uses threading to speed up the annotation process. ⚡
+- **Data Visualization**: Generates a pie chart showing the distribution of protein families. 🍰
+- **Results Output**: Saves the annotated sequences along with their functional annotations into a CSV file. 📑
+
+## Prerequisites 🛠️
+
+Before running this script, make sure the following prerequisites are met:
+
+### Python Requirements 🐍
+
+- Python 3.6+
+- Required Python libraries:
+  - `numpy`
+  - `pandas`
+  - `matplotlib`
+  - `argparse`
+  - `concurrent.futures`
+
+You can install the necessary Python packages using:
+
+```bash
+pip install numpy pandas matplotlib
+```
+
+### InterProScan 🧬
+
+- **InterProScan**: The script integrates **InterProScan**, a tool for protein sequence annotation. You will need to have InterProScan installed and available on your system to actually annotate the sequences. You can download and install it from the official [InterProScan website](https://www.ebi.ac.uk/interpro/interproscan.html).
+
+  **Note**: If you're running this code in a simulation mode (like for testing), you can replace the function `run_interproscan()` with real InterProScan calls.
+
+### Optional: PDB File Processing Tools 🔍
+
+If you wish to visualize or manipulate the predicted structures (or other related data), you may need visualization tools like **PyMOL** or **Chimera**.
+
+## Usage 💻
+
+### Command-Line Arguments 📋
+
+The script accepts two arguments:
+
+- `input_file`: Path to the input file (CSV or TSV) containing protein sequences.
+- `output_file`: Path to the output file where the annotated results will be saved.
+
+Example command to run the script:
+
+```bash
+python annotate_protein.py input_data.tsv output_results.csv
+```
+
+### Input File Format 📝
+
+Your input file should be a CSV or TSV file with at least one column containing the protein sequences. For example:
+
+| Protein ID | Sequence      |
+| ---------- | ------------- |
+| P001       | MKTAYIAKQR... |
+| P002       | MEKGYYVLLA... |
+
+- `Protein ID`: A unique identifier for each protein.
+- `Sequence`: The amino acid sequence of the protein.
+
+### Output File Format 📂
+
+The output file will be a CSV file with the following format:
+
+| Protein ID | Sequence      | Domains                        | Family         |
+| ---------- | ------------- | ------------------------------ | -------------- |
+| P001       | MKTAYIAKQR... | ['Kinase', 'ATPase']           | Protein Kinase |
+| P002       | MEKGYYVLLA... | ['Zinc finger', 'Phosphatase'] | Phosphatase    |
+
+- `Domains`: A list of functional domains found in the protein.
+- `Family`: The predicted protein family based on functional annotations.
+
+Additionally, a pie chart will be displayed, visualizing the **protein family distribution**.
+
+## Script Breakdown 🛠️
+
+### 1. **Load Input Data** 📥
+
+The `load_protein_data(file_path)` function reads the input CSV or TSV file and loads the protein sequences into a pandas DataFrame.
+
+### 2. **Run InterProScan for Annotation** 🔬
+
+The `run_interproscan(protein_sequence)` function simulates running **InterProScan** on the protein sequence. It returns a dictionary with the identified protein domains and family. Replace this function with an actual call to **InterProScan** when running in production.
+
+### 3. **Parallel Processing** ⚡
+
+The `process_protein_data_parallel(data, max_workers)` function processes the protein sequences in parallel using threading. This allows the script to handle large datasets efficiently by performing multiple annotations simultaneously.
+
+### 4. **Data Visualization** 📊
+
+The `visualize_family_distribution(data)` function generates a **pie chart** that shows the distribution of protein families in the dataset. This gives you a quick overview of the functional composition of your protein data.
+
+### 5. **Results Output** 💾
+
+The `save_results_to_file(data, output_file)` function saves the annotated results, including protein domains and families, to a new CSV file.
+
+## Example Workflow 🛠️
+
+1. **Prepare your input file** (`input_data.tsv`) with the protein sequences.
+
+2. **Run the script** using the following command:
+
+   ```bash
+   python annotate_protein.py input_data.tsv output_results.csv
+   ```
+
+   - This will process the sequences, annotate them using InterProScan (replace the simulated function with real InterProScan calls), generate a pie chart of protein family distribution, and save the annotated data to `output_results.csv`.
+
+3. **Visualize Protein Family Distribution** 🍰: After processing, the script will display a pie chart showing the distribution of protein families in your dataset.
+
+### Example Output:
+
+The output CSV file might look like this:
+
+| Protein ID | Sequence      | Domains                        | Family         |
+| ---------- | ------------- | ------------------------------ | -------------- |
+| P001       | MKTAYIAKQR... | ['Kinase', 'ATPase']           | Protein Kinase |
+| P002       | MEKGYYVLLA... | ['Zinc finger', 'Phosphatase'] | Phosphatase    |
+
+Additionally, the pie chart will show the percentage distribution of the protein families such as **Protein Kinase**, **Phosphatase**, etc.
+
+## Troubleshooting ⚠️
+
+### 1. InterProScan is not running correctly 🔧
+
+- Ensure that your InterProScan environment is set up correctly and that the tool is executable from the command line. If using an external tool, make sure you have specified the correct path to the InterProScan installation.
+- Refer to the [InterProScan installation guide](https://www.ebi.ac.uk/interpro/interproscan.html) for detailed setup instructions.
+
+### 2. Pie chart is not displaying correctly 📊
+
+- If you're running the script in a non-GUI environment (like a server), the pie chart may not display. You can save the chart to a file by adding `plt.savefig('output_chart.png')` after the `plt.show()` line in the `visualize_family_distribution` function.
+
+### 3. Performance issues with large datasets 🏃‍♂️
+
+- The script uses threading to parallelize the process, but very large datasets may still take time to process. Consider reducing the number of threads in the `max_workers` parameter or running the script on a machine with more CPU resources.
+
+
 
 
 ## Caveats ⚠️
